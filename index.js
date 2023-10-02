@@ -6,15 +6,11 @@
 */
 
 function tribonacci(signature, n) {
-  if (n >= 0 && n < signature.length) {
-    return signature.splice(0, n);
-  }
-
   for (let i = 0; signature.length < n; i++) {
     signature.push(signature[i] + signature[i + 1] + signature[i + 2]);
   }
 
-  return signature;
+  return signature.splice(0, n);
 }
 
 console.log(tribonacci([1, 1, 1], 10));
